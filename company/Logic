@@ -48,4 +48,34 @@ then result = result - hm.get(s.charAt(i-1))
        nums[low] == nums[low+1] then low++
        nums[high] == nums[high-1] then high--
 
+8: StrStr(() --KMP -knuth morris-Pratt sunsstring problems)
+   Naive- 2 for loops check every char in both string if not matches got back to nect string
+   0(mn) --main string is processed too many times if mismatch
+
+   mainyain 2 forloops 
+     -- check only till the difference m-n
+     -- inner loop check if str.charAt(i+j == substring.charAT(j)) then check if j is endof length then return i else return -1;
+     --test cases emptyness,null etc
+     -- 
+     KMP
+   --improvement can be done their, keep track of already visited
+   --DNA identification if billions--efficient
+   Breakdown:
+   ---   ignore the big strig now and concentrate on substring and build a table of array 
+   -- declare 2 indices i , j i=1, j=0
+      final array = [-1,-1,-1]
+      compare 
+      check prefix =suffic or not
+      if not restrat
+      i does not go backj only go to back if nothing matches else it gos to already trversd 
+
+
+
+
+
+https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
+
+
+
+
 
