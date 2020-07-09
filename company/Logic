@@ -34,4 +34,18 @@ return thous[num/1000] + hund[(num%1000)/100] +tens [num%100/10] + num%10
 else 
 then result = result - hm.get(s.charAt(i-1))
 
+7. Three sum--
+   -- sort the arrays
+   -- perform looping until lenth-2 since we need atleast 2 numbers  for a+b = -calculate
+   --  identity duplicates and write the logi c for if not duplicates do this
+   --logic 2 ptr code 
+   -- keep target as sum and do 2 ptr thing  from i+1 and length-1
+   i.e rest of the arrays
+   -- if a+b = target satisfies then add all elements
+   -- if a+b > target then reduce high--
+       else low--
+   --  Most important thing is removing duplicates with in elements not to process
+       nums[low] == nums[low+1] then low++
+       nums[high] == nums[high-1] then high--
+
 
