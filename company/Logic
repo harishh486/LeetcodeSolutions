@@ -1,0 +1,37 @@
+1. Longestsubstringwithoutrepition ==> sliding window problem
+ keep one ptr and othe prt move until logic failes if logi fails
+ increment left ptr and calcutae  length r-l or size of hash Map
+
+2. ato i -- str conversion logic 
+            int digit = str.charAt(i)-'0';
+            result = result*10 + digit; 
+            //ascii '1' -'0' = 0
+            //ascii '9' - '0' = 9
+3. twoSum -- a+b =target
+       save in hashmap compliment a = target-b
+       and get compliment
+
+4. container probelem --max water -- max area problem
+   brute force: 2 loops and calculate both area 
+   2 ptss
+   one at strt and other at end
+   area = max( max,(min(h[i], h[j])* j-i))
+   if h[i]< h[j} i++
+   else  j--;
+5.  int to roman ==> string declaration of arrays for ones tens thund thou
+make string literal "" instead of '';
+return thous[num/1000] + hund[(num%1000)/100] +tens [num%100/10] + num%10
+
+
+6. Roman to Int 
+  Keep a hashmap of roman and original
+  Map<Character, Integre> hashmap
+  initial result value = get hold of original right most value  s.length()-1 value in hashmap
+  traverse from right to left 
+  check i-1 and i index
+  if i-1 >= i 
+   then result = result + hm.get(s.charAt(i-1))
+else 
+then result = result - hm.get(s.charAt(i-1))
+
+

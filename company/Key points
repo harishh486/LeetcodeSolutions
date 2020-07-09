@@ -1,0 +1,49 @@
+Arrays:
+char arr[] = arr.length
+
+
+Strings:
+
+String s = s ==null or s.length()
+s.charAt(character)
+
+
+Maps:
+========
+
+HashMap< inetegre, Integer> hm = new HashMap();
+hmap.containsKey(target-nums[i])
+hmpa.put(i,j)
+hmap.get(i)
+
+
+Sets:
+========
+Set< character> s = new HashSet();
+Uniques
+hashset.contains()
+hashset.add(s.charAt(char))
+hash.remove()
+
+hash.size(()
+
+Sliding window:
+=============
+
+Hash set,
+fix one rotate/move other one ptrs
+
+while looping
+maintain max
+if element not found at hash set , put them ,calculate max and increment right++
+if element found remove element and decrement left--
+
+
+Coding:
+
+ // check null cases first
+ // Initialization of map,set , list or variables
+ //return whatever its asking
+ //logic with loops
+ 
+
