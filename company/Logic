@@ -69,6 +69,17 @@ then result = result - hm.get(s.charAt(i-1))
       if not restrat
       i does not go backj only go to back if nothing matches else it gos to already trversd 
 
+9: 3 sum closest:
+  // similar to 3 sum  and similar to 2 ptr concept
+  //sort the array and do 2 pts thing
+  // keep one fix and use i+1 and length-1 concept here also just like 3sum
+  //maintain random result_sum with any random 3 values
+  //iterate each value in loop :::iterate upto length-2 since we need atleast 2 numbers
+  while(a_ptr< b_ptr)
+  cal curr sum and compare with target and adjust a_ptr or b_ptr depends on comparison
+  //Also most important one comapre the hop distance between currensum -target vs alreadyresultsum-target which ever is less tells that it is closest to target
+  //so update the result sum with curr sum if smmallest
+  if(Math.abs(currsum-target)< resultsum-target then assign resultsum=currsum)
 
 
 

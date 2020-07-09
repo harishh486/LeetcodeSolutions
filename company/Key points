@@ -1,11 +1,19 @@
 Arrays:
 char arr[] = arr.length
+Arrays.fill(pattern, -1);
+Arrays.asList(list);
+
 
 
 Strings:
 
 String s = s ==null or s.length()
 s.charAt(character)
+
+
+Character comparison:
+==
+s.charAt(i) == t.charAt(i)
 
 
 Maps:
