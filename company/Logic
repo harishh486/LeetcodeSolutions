@@ -134,7 +134,20 @@ also count -- when we miss the requiremnt constraint increment l adn r
 
   else continue doing the same by i++,j++
   and also resetsing the earlier difits v1=v2=0;
-  
+
+  14: Product of array but itself:
+
+   maintain left and right product for the current element  and then multiple
+   left/outproduct[i]  = out/leftproduct[i-1]* nums[i-1]
+initilaize o and N-1 =1 for both aarrays for i ->N-2 i>=0
+   rightprd  = rightprd[i+1]* nums[i+1]
+
+   R=1, out[0]=1
+   left ==> outer[i] = outer[i-1]* nums[i-1]  for i -0;i<N
+   right ==> outer[i] = outer[i] *R   ++> for i =N-1; i>=0
+              R* nums[i]
+            
+
 
 https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
 
