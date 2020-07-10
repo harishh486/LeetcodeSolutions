@@ -114,7 +114,27 @@ then result = result - hm.get(s.charAt(i-1))
 // once satified incremnet L by forwarding
 // as soon as it fails the requiremnt again R++ until satified
 // maintain  countarray for t string
-//
+//Algo is as follow:: maintain countarray for t string, then we compare s tring one by one maintaining 2 pts  by sliding window//
+// left and right start at same times
+//first satidfy the constraint by increasing the count
+
+// then optimize for min window
+when  count == t.lnth do
+//l++ and r++ 
+also count -- when we miss the requiremnt constraint increment l adn r
+
+13:
+  // have two numrcic int v1 and v2
+  // convert each char in string to single digit and assign to v1 and v2
+  //convert char to  digit using 
+  v1= v1*10 + v.charAt(i)-'0 for both v1 and v2 
+  an d then compare the digits v1 and v2
+  if v1>v2 -->1 
+  if v2>v1 -->-1
+
+  else continue doing the same by i++,j++
+  and also resetsing the earlier difits v1=v2=0;
+  
 
 https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
 

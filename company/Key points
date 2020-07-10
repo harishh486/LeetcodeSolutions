@@ -16,7 +16,10 @@ int N = matrix.length;
 
 
 //character count--use hash map
+char to digit== v1*10+ v.charAt(i)-'0'
 
+// character to digit ==>  int numericV2 = numericV2*10 + (version2.charAt(j) -'0' ); 
+// string to integer == > int i1 =  Integer.parseInt(nums1[i])
 
 Strings:
 
