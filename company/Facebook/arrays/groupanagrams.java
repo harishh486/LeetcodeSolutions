@@ -30,6 +30,15 @@ class Solution {
     }
 }
 
+// defuine map string list
+//iterate each str over array
+//for each string
+//conbvert to charArray and then sort and then convert back to string which acts a s a key
+//now in map if key present  add the current string ur iterating else create a key with empty list and then add current string 
+// once we fill all values we group all anagrams in list og map vaules map.values give s all values
+//new Arraylist(map.values())--return list of lists
+
+
 //T: 0(nklogk)
 //S:0(nk)
 //n -lenth og string arrays and to sort each st we take klogk

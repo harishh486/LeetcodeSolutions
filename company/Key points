@@ -2,13 +2,28 @@ Arrays:
 char arr[] = arr.length
 Arrays.fill(pattern, -1);
 Arrays.asList(list);
+int N = matrix.length;
+ Arrays.sort(nums);
+ 
+  ==>str to charArray conversion
+   first convert str to charArray
+   char [] ch = s.toCharArray();
+   //iterate
+   for (char c : t.toCharArray() )
+  //convert back to string and make it as key
+    String key = String.valueOf(ch);
 
+
+
+//character count--use hash map
 
 
 Strings:
 
 String s = s ==null or s.length()
 s.charAt(character)
+
+s.substring(inclusive, exclusiveindex)
 
 
 Character comparison:
@@ -24,6 +39,10 @@ hmap.containsKey(target-nums[i])
 hmpa.put(i,j)
 hmap.get(i)
 
+map.get(key).add(string)
+
+Map <String, List> map = new HashMap<String, List>();
+
 
 Sets:
 ========
@@ -34,6 +53,13 @@ hashset.add(s.charAt(char))
 hash.remove()
 
 hash.size(()
+
+Array list:
+==========
+new ArrayList(List of lists) -- gives list of lists
+
+if List<List<String>> is return value
+ u can also return new Arraylist() as anchor condition 
 
 Sliding window:
 =============
@@ -53,5 +79,17 @@ Coding:
  // Initialization of map,set , list or variables
  //return whatever its asking
  //logic with loops
+
+
+
+ optimize:
+ =======
+ bottlenecks
+ duplicates
+ unnecessary work
+
+
+ decrease time by using some auxillary space for repeted work
+
  
 

@@ -34,7 +34,7 @@ class Solution {
 //t: O(n*n) 2 loops iterate  + sort (nlogn) ==> o(n*n) + nlogn
 //S: o(n)-o(logn) // depends on implementation of sorting algorithm
 //depends on the sorting algorithm
-
+//but here 0(!) * sort algo one :::As no extra space is required
 
 //Can we achieve space 0(1) ?
 // you can achieve O(1) memory complexity, you can use the selection sort instead of a built-in sort in the Two Pointers approach. 

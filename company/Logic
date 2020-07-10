@@ -82,7 +82,39 @@ then result = result - hm.get(s.charAt(i-1))
   if(Math.abs(currsum-target)< resultsum-target then assign resultsum=currsum)
 
 
+10: Rotate matrix inolace:
+  simple use formula d[i][j]= src [src.length-1 -j][i] without inplace
+  
+   transpose and do reverse  each row of the resultant matrix after tarnpsoe
+   row sto colums chnage
+   then flip swap vaules with 2 pts approach
+   1/ transpose 
+   2. reverse
+   3. 2 pts method 
+   but inplace 
 
+11. Group Anagrams
+// defuine map string list
+//iterate each str over array
+//for each string
+//conbvert to charArray and then sort and then convert back to string which acts a s a key
+//now in map if key present  add the current string ur iterating else create a key with empty list and then add current string 
+// once we fill all values we group all anagrams in list og map vaules map.values give s all values
+//new Arraylist(map.values())--return list of lists
+
+
+
+12: Min Window substring
+
+// two pts:
+// sliding minWindow
+// 2 pts startss at same 
+// L R e
+// xpand the window by R++ if not satified
+// once satified incremnet L by forwarding
+// as soon as it fails the requiremnt again R++ until satified
+// maintain  countarray for t string
+//
 
 https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
 
