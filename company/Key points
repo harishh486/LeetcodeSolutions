@@ -17,6 +17,7 @@ int N = matrix.length;
 
 //character count--use hash map
 char to digit== v1*10+ v.charAt(i)-'0'
+boolean islog1Digit = Character.isDigit(s1[1].charAt(0));
 
 // character to digit ==>  int numericV2 = numericV2*10 + (version2.charAt(j) -'0' ); 
 // string to integer == > int i1 =  Integer.parseInt(nums1[i])
@@ -27,6 +28,17 @@ String s = s ==null or s.length()
 s.charAt(character)
 
 s.substring(inclusive, exclusiveindex)
+
+string.split(" ",2);  // split atmost 2 words
+
+string.toLowerCase().split("\\W+)
+--regex for non -word character
+--split on non word like space , anything which is not a word
+
+//he compareTo() method compares two strings lexicographically.
+The method returns 0 if the string is equal to the other string. A value less than 0 is returned if the string is less than the other string (less characters) and a value greater than 0 if the string is greater than the other string (more characters).
+Use the equals() method to compare two strings without consideration of Unicode values.
+String[1].compareTo(s[1])
 
 
 Character comparison:
@@ -42,6 +54,12 @@ hmap.containsKey(target-nums[i])
 hmpa.put(i,j)
 hmap.get(i)
 
+map.keySet() --return all lkeys--can be used as array of keySet
+map.values()--all values in map--list of all values
+
+hm.getOrDefault(c,0) +1
+
+
 map.get(key).add(string)
 
 Map <String, List> map = new HashMap<String, List>();
@@ -51,7 +69,7 @@ Sets:
 ========
 Set< character> s = new HashSet();
 Uniques
-hashset.contains()
+hashset.contains(s)
 hashset.add(s.charAt(char))
 hash.remove()
 
@@ -74,6 +92,22 @@ while looping
 maintain max
 if element not found at hash set , put them ,calculate max and increment right++
 if element found remove element and decrement left--
+
+
+Stack:
+======
+LIFO
+stack.push() --push to stack 
+stack.peek() -- get the top of stack but not remove ::for checking puroose useful
+    ---- used to retrieve or fetch the first element of the Stack or the element present at the top of the Stack
+stack.pop() -- remove from stack
+STACK.isEmpty()
+Stack.size()
+
+Stack<Character> st = new Stack()
+
+
+
 
 
 Coding:

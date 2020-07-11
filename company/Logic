@@ -34,7 +34,7 @@ return thous[num/1000] + hund[(num%1000)/100] +tens [num%100/10] + num%10
 else 
 then result = result - hm.get(s.charAt(i-1))
 
-7. Three sum--
+7. Three sum--  ***
    -- sort the arrays
    -- perform looping until lenth-2 since we need atleast 2 numbers  for a+b = -calculate
    --  identity duplicates and write the logi c for if not duplicates do this
@@ -82,7 +82,7 @@ then result = result - hm.get(s.charAt(i-1))
   if(Math.abs(currsum-target)< resultsum-target then assign resultsum=currsum)
 
 
-10: Rotate matrix inolace:
+10: Rotate matrix inolace:  --***
   simple use formula d[i][j]= src [src.length-1 -j][i] without inplace
   
    transpose and do reverse  each row of the resultant matrix after tarnpsoe
@@ -146,7 +146,71 @@ initilaize o and N-1 =1 for both aarrays for i ->N-2 i>=0
    left ==> outer[i] = outer[i-1]* nums[i-1]  for i -0;i<N
    right ==> outer[i] = outer[i] *R   ++> for i =N-1; i>=0
               R* nums[i]
-            
+
+  
+
+  15: Missing num --***
+   calculate sum and substrct from n(n-1)/2 -sum which give smissing numbers here n-1 becos it starts from 0 to n 
+
+
+
+
+  16: find first  unique character  or first non repiting charcter index in s astring
+
+   use hashmap == becos relate to count in a array or string
+   iterate over the string 
+   HashMap<Character, Integer> hm 
+   hm.put(c, h.getOrDeafult(c,0) +1)
+
+   once we build hashmap
+   then iterate over to check get(c)  ==1 if so return index else -1
+
+   Build hashmap 
+// and traverse the hashmap with value ==1 then return index
+
+
+
+17: Valid Parantheses: ****
+===================
+
+--famous stack reference problem
+--bracket matching probelm 
+-- order of closing important
+
+-- quick check if string length is not even return failes
+loop thru string
+
+if u find the open brace for any brace --push it
+when u find the closing brce , check the top of the stack if it matches then pop it else return false
+opening--push
+closing brace- not emptystack,
+               peek and  if matches then
+               pop
+
+
+18: Most Common  word problem:
+ ---make the lowercase
+ --split the paragraph and 
+-- use regex(\\W+) for non word characters and + is more 
+use hashset to get quickly instead of for ;loops
+--use hashmap-for each word and maintain count--classic count poroblem
+
+--take the split  words and put it in hashmapbut 
+    --befor eputting check if its a banned word, 
+       -- if so dont put else put in map
+       becos we need other than banned one and it should have max count
+
+--once we build map then classic max problem --maintain max and update max thru loop and if it hit max
+ tehn update result word
+
+
+19: log reorder 
+
+Instead of sorting in the default order, we'll sort in a custom order we specify.
+The rules are:
+Letter-logs come before digit-logs;
+Letter-logs are sorted alphanumerically, by content then identifier;
+Digit-logs remain in the same order.
 
 
 https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
