@@ -1,0 +1,164 @@
+1. Validate BST
+=============
+
+Binary search Tree -- every root should shud be greater than its left subtree and 
+less than its right sub tree
+
+logic every node, shud be in between min and max;
+min < node.val < max
+recursieve obviously
+
+
+validatehelper(root, min, max) -- make sure it is long in leetcode
+
+check base cases
+root==null return true
+if root <=min || >= max
+  out of range  return false
+return validate(root.left, min, root.val) &&
+       validate(root.left, root.val, max) 
+
+Note:
+======
+
+  public static boolean isValidBST(TreeNode root) {
+        return validateHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+          
+    }
+private static boolean validateHelper(TreeNode root, long min, long max){
+}
+
+######Try to write static methoda and helper private methods
+static needs to call the statiic methods
+
+Typically when writing trrees-- recursively
+
+
+2. Symmetric trees=
+==============
+
+Two trees are a mirror reflection of each other if:
+
+Their two roots have the same value.
+The right subtree of each tree is a mirror reflection of the left subtree of the other tree.
+
+This is like a person looking at a mirror. The reflection in the mirror has the same head, but the reflection's right arm corresponds to the actual person's left arm, and vice versa.
+
+//check the root cases
+1.helper method(left, right)// check left sub tree and right sub tree are Symmetric
+2.if both are null
+ return false;
+ if one of them is null other is not null -==> if left ==null || right == null --return false;
+   return false
+
+3. check the data as well
+    if(left.val != null )  return false;
+
+4. symmtric(left.left, right.right) && symetric(left.right, right.left)
+Diagram
+
+Iterative approach
+==================
+        // we will pick 2 element nodes and try to compare them and everytime it shud be equal else not symmetric
+        // we also need to insert in certain way to be symmetric
+        // we will initiaize 2 nodes initially as roots only
+        // then later on left sub tree an d right sub tree
+         
+          q.add(root);
+            q.add(root);
+
+            // do the oprations until queu is empty
+            write all conditions
+            if(t1 == null && t2 == null)
+                     continue; // important becos there might be next elemnts after two consecutuve nulls ---*******
+
+
+                if(t1 == null || t2 == null )
+                    return false;
+
+                if(t1.val !=  t2.val)
+                    return false;
+
+                      // now we completed all comparisons
+                // we need to insert in a better way to check symm
+
+                q.add(t1.left);
+                q.add(t2.right);
+                q.add(t1.right);
+                q.add(t2.left);
+
+  3: Level order traversal:
+  =======================
+
+comes to mind BFS breadth first search
+ trees are acuyclic graph representation:
+
+we can use queue and make use of FIFO since BFS uses ques where as DFS --stack
+
+// initailize the queue : use Linked list implementation of Queue Interface
+Queue <TreeNode> q = new LinkedList();
+// initilize with root node initilly to queus as iniyial
+// while q is not empty  do --
+    // we need to keep track of nno. of nodes in each levels
+    // we can do that by size of queue
+    // since we need to add list of elements after each level maintain a lLL for ech level and erases after each level
+    List<Integer> =  new ArrayList();
+    for( loop till size)
+     do 
+     1. pop the queue element
+          TreeNode node = queue.remove()
+     2. do some operation with it :: here we are adding to lists but can be anything like printing or anything
+           tempList.add(t.val);
+      3. add its left and right trees and Make sure to check left and right nodes are not null
+      we dont want to insert to null values into queue
+                if(t.left != null)
+                    q.add(t.left);
+                if(t.right != null)
+                    q.add(t.right);
+      commplete foor
+    then add the list of level nodes to original node
+      resultList.add(tempList); 
+
+  4: Zig zag level order traversal
+  ====================
+
+  Same as level order and we use same alg
+  except some flag and how to insert elements to Linked List
+   we will leverage list.add(x) and list.add(0, x)
+   and we decide that based on the flag and for every level we chnage the flag
+
+        // same like  level order tree except we manipulate linked list on how to insert either append or insert at first position
+        //leverage that and also we try to decide that at every level using a level flag so that based pon this we can decide where to insert , rest everything is same
+        // Achieved using BFS -- QUEUE
+
+// initailize the queue : use Linked list implementation of Queue Interface
+        Queue<TreeNode> q = new LinkedList();
+        boolean orderFlag = true; and also a flag
+
+// initilize with root node initilly to queus as iniyial
+// while q is not empty  do --
+    // we need to keep track of nno. of nodes in each levels
+    // we can do that by size of queue
+    // since we need to add list of elements after each level maintain a lLL for ech level and erases after each level
+    List<Integer> =  new ArrayList();
+    for( loop till size)
+     do 
+     1. pop the queue element
+          TreeNode node = queue.remove()
+     2. do some operation with it :: here we are adding to lists but can be anything like printing or anything
+         Tricky:: maniuplutae
+                if(orderFlag)
+                    tempList.add(t.val);
+                else
+                    tempList.add(0, t.val);
+
+      3. add its left and right trees and Make sure to check left and right nodes are not null
+      we dont want to insert to null values into queue
+                if(t.left != null)
+                    q.add(t.left);
+                if(t.right != null)
+                    q.add(t.right);
+      commplete foor
+    then add the list of level nodes to original node and chnage the flag at each level
+      resultList.add(tempList); 
+        orderFlag = orderFlag ? false :true;

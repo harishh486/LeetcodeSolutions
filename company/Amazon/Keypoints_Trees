@@ -1,0 +1,47 @@
+Binsaru search tree:
+==================
+static class BST {
+    int data;
+    BST left;
+    BST right;
+
+    public BST(int data) {
+        this.data = data;
+    }
+}
+
+
+Queue:
+=======
+//In Java one could use LinkedList implementation of the Queue interface.
+        Queue <TreeNode> q = new LinkedList();
+
+
+In order to add an element in a queue, we can use the add() method. 
+The insertion order is not retained in the PriorityQueue. 
+The elements are stored based on the priority order which is ascending by default.
+q. add(element)
+
+In order to remove an element from a queue, we can use the remove() method.
+ If there are multiple such objects, then the first occurrence of the object is removed.
+q.remove(element)
+
+Iterator iterator = pq.iterator(); 
+ iterator.hasNext()
+q.size()
+
+Clasees which implment queu interface
+--PriorityQueue -- process the objects based on the priority. It is known that a queue follows First-In-First-Out algorithm, but sometimes the elements of the queue are needed to be processed according to the priority, that’s when the PriorityQueue comes into play 
+   Default: Ascending order
+--LinkedList
+     Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays or queues.
+-- Priority Blockiing Queue
+    PriorityBlockingQueue is one alternative implementation if thread-safe implementatio
+
+
+
+LinkedList:
+=============
+
+list add(t.val)
+list.add(index, t.val);
