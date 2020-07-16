@@ -1,0 +1,520 @@
+1. Longestsubstringwithoutrepition ==> sliding window problem
+=====================
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", with the length of 3.
+
+Logic:
+SW--use hashset and 2 pts
+
+Maintain 2 pts => l, r anc check r <s.length
+
+keep one ptr and othe prt move until logic failes 
+if element is not in set, then add and calculate max= > max> h.size() and update mmax
+r++
+if element present-- do L++ and also remove that element
+
+calcutae  length r-l or size of hash Map
+
+return max
+
+
+2. ato i
+=================
+
+Input: "42"
+Output: 42
+
+Logic:
+
+convert char to digit  for entire string
+and write test cases basedon it
+
+
+ -- str conversion logic 
+            int digit = str.charAt(i)-'0';
+            result = result*10 + digit; 
+            //ascii '1' -'0' = 0
+            //ascii '9' - '0' = 9
+
+  Make use of double--since large numbers --int and finally
+  return (int)result;
+  isNegative--keep track
+
+  since string and char--make use of str.charAt(i)
+
+  Starts with non numeric--return 0;
+  ==> str.charAt(i) < '0' || str.charAt(i) > '9'
+Input: "words and 987"
+Output: 0
+
+
+    cases:
+     1. trim()
+     2. -ve number make a note
+     3: convert string and if ifinds non numeric --return 0
+     4. out of ranges
+     5. make exception if first char is -/+
+
+
+  
+
+3. twoSum -- 
+
+Given nums = [2, 7, 11, 15], target = 9,
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+
+a+b = target
+
+a= target -b; //compliment
+
+check if a key is already containsKey()
+
+if key ~ compliment
+contains then  return  new int[ {hmap.get(target-nums[i]), i}]
+
+throw new IllegalArgumentException("No two sum solution");
+
+
+
+4. container probelem --max area
+===============================
+Input: [1,8,6,2,5,4,8,3,7]
+Output: 49
+
+
+--max water -- max area problem
+
+   brute force: 2 loops and calculate both area 
+   
+   2 ptss start at left and right
+
+   one at strt and other at end
+   max=0;
+   left=0;
+   right =h.length-1
+
+   while(l<r)
+    get the max using logic
+    max( current max, min(h[l, h[r]]* r-l))
+   area = max( max,(min(h[i], h[j])* j-i))
+   if h[i]< h[j} i++
+   else  j--;
+
+
+5.  int to roman ==> 
+Input: 3
+Output: "III"
+
+string declaration of arrays for ones tens thund thou
+make string literal "" instead of '';
+   String ones[] = {"","I", "II", "III", "IV", "V", "VI", "VII","VIII", "IX"};
+        
+        String tens[] = {"","X","XX","XXX", "XL", "L", "LX", "LXX","LXXX", "XC"};
+        
+        String hundreds[] = {"","C","CC","CCC", "CD", "D", "DC", "DCC","DCCC","CM"};
+        
+        String thous[] = {"","M","MM","MMM"}; //remember onlu 3999 roman 
+
+return thous[num/1000] + hund[(num%1000)/100] +tens [num%100/10] + num%10
+
+
+
+
+6. Roman to Int 
+
+Input: "III"
+Output: 3
+
+  Keep a hashmap of roman and original
+  Map<Character, Integre> hashmap
+
+  We need to traverse right most becos of unit value  --***
+
+  Traverse from righ to left 
+  compare right most with rightmost-1 
+
+  keep  adding the rightmost value and going on 
+  
+  take a simple LV111 example u ll understand the logic
+
+  if (hm.get(s.charAt(i-1)) >= hm.get(s.charAt(i))
+      result=result + hm.get(s.charAt(i-1));
+  else 
+       result=result - hm.get(s.charAt(i-1));
+
+  initial result value = get hold of original right most value  s.length()-1 value in hashmap
+  traverse from right to left 
+  check i-1 and i index
+  if i-1 >= i 
+   then result = result + hm.get(s.charAt(i-1))
+else 
+then result = result - hm.get(s.charAt(i-1))
+
+
+
+7. Three sum--  ***
+
+
+Given array nums = [-1, 0, 1, 2, -1, -4],
+
+-4 -1 -1 0 1 2
+A solution set is:
+[
+  [-1, 0, 1],
+  [-1, -1, 2]
+]
+ Logic:
+ =====
+
+   -- sort the arrays
+   -- perform looping until lenth-2 since we need atleast 2 numbers  for a+b = -calculate
+   -- if not duplicates {
+      // do the logic
+      //logic 2 ptr code 
+      keep target as sum and do 2 ptr thing  from i+1 and length-1
+
+      low=i+1;
+      right= length-1
+      taget=0-nums[i]
+      a) equal cases -- add the results  and check for duplicates also a[low]== a[low+1] low++; a[high]== a[high-1] high--;
+      b) great--r--
+      lc) ess==> l++
+
+         i.e rest of the arrays
+   -- if a+b = target satisfies then add all elements
+   -- if a+b > target then reduce high--
+       else low--
+   --  Most important thing is removing duplicates with in elements not to process
+       nums[low] == nums[low+1] then low++
+       nums[high] == nums[high-1] then high--
+
+   }
+
+
+
+8: StrStr(() 
+Input: haystack = "hello", needle = "ll"
+Output: 2
+
+--KMP -knuth morris-Pratt substring problems)
+   Naive- 2 for loops check every char in both string if not matches got back to nect string
+   0(mn) --main string is processed too many times if mismatch
+
+   --test cases emptyness,null etc
+   maintain 2 forloops 
+
+     -- check only till the difference m-n--outer loop
+     -- inner loop check if str.charAt(i+j == substring.charAT(j)) 
+           then check if j is endof length then return i 
+        else return -1;
+    
+     -- 
+     KMP
+   --improvement can be done their, keep track of already visited
+   --DNA identification if billions--efficient
+   Breakdown:
+   ---   ignore the big strig now and concentrate on substring and build a table of array 
+   -- declare 2 indices i , j i=1, j=0
+      final array = [-1,-1,-1]
+      compare 
+      check prefix =suffic or not
+      if not restrat
+      i does not go backj only go to back if nothing matches else it gos to already trversd 
+
+
+9: 3 sum closest:
+
+Input: nums = [-1,2,1,-4], target = 1
+Output: 2
+Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+
+3 sum==> sort, 2ptr, loop upto difference, sliding window
+for and while loop
+
+min hop logic ::abs values then return the result sum;
+
+
+
+  // similar to 3 sum  and similar to 2 ptr concept
+  //sort the array and do 2 pts thing
+  // keep one fix and use i+1 and length-1 concept here also just like 3sum
+  //maintain random result_sum with any random 3 values
+  //iterate each value in loop :::iterate upto length-2 since we need atleast 2 numbers
+  while(a_ptr< b_ptr)
+  cal curr sum and compare with target and adjust a_ptr or b_ptr depends on comparison
+  //Also most important one comapre the hop distance between currensum -target vs alreadyresultsum-target which ever is less tells that it is closest to target
+  //so update the result sum with curr sum if smmallest
+  if(Math.abs(currsum-target)< resultsum-target then assign resultsum=currsum)
+
+
+10: Rotate matrix inplace:  --***
+
+Given input matrix = 
+[
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+],
+
+rotate the input matrix in-place such that it becomes:
+[
+  [7,4,1],
+  [8,5,2],
+  [9,6,3]
+]
+
+
+  simple use formula d[i][j]= src [src.length-1 -j][i] without inplace
+  
+   transpose and do reverse  each row of the resultant matrix after tarnpsoe
+   row sto colums chnage
+   then flip swap vaules with 2 pts approach
+   2 nested loops oone for transpose and other for reverse
+   1/ transpose 
+      j=i  and j<N as we need to move along with rows
+      int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i]= temp;
+
+   2. reverse -- //we need not iterate thru all colu, we can go upto N/2 inhe 2nd inner loop
+        //we need not iterate thru all colu, we can go upto N/2
+             
+             for(int j =0;j<(N/2);j++){
+                 //here we are manipulating same row so keep i constant only j logic will change
+                 int temp = matrix[i][j];
+                 matrix[i][j]= matrix[i][N-1-j];
+                 matrix[i][N-1-j] = temp;
+             }
+  First find the matrix length
+//2 loop regular with inner loop shud follow outre loop row i=0 outer andinner j=i inner loop
+//replace matrix i,j with matrix j,i with temp
+
+// once transpose is completed
+// then use reverse the values within row 
+// so i<N but inner j<N/2 since half is enugh
+ reverse loop  i shud be constant in logic since it moves with rows but 
+ j logic will be chnaged as j ==> N-1-j
+ 
+
+11. Group Anagrams
+
+Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+Output:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
+
+****
+//convert the string--sorted ??? convert to charArray and then use arrays.sort(ch)--easy way
+//then convert the sorted array to string back again
+
+// define map string list
+ Map <String ,List> map = new HashMap();
+
+//iterate each str over array
+//for each string
+   //convert the string to--sorted ??? convert string to charArray and then use arrays.sort(ch)--easy way
+   //then convert the sorted array to string back again
+   // which acts a key
+
+//now if key present in map,  add the current string ur iterating 
+      if key -not prsent first create  empty arraylist and then add.
+         if(!map.containsKey(key))
+            map.put(key, new ArrayList());
+          map.get(key).add(s);/
+// once we fill all values we group all anagrams in list og map vaules map.values give s all values
+
+//new Arraylist(map.values())--return list of lists
+
+
+
+12: Min Window substring
+
+Input: S = "ADOBECODEBANC", T = "ABC"
+Output: "BANC"
+
+
+// two pts:
+// sliding minWindow
+// 2 pts startss at same 
+// L R e
+// xpand the window by R++ if not satified
+// once satified incremnet L by forwarding
+// as soon as it fails the requiremnt again R++ until satified
+// maintain  countarray for t string
+//Algo is as follow:: maintain countarray for t string, then we compare s tring one by one maintaining 2 pts  by sliding window//
+// left and right start at same times
+//first satidfy the constraint by increasing the count
+
+// then optimize for min window
+when  count == t.lnth do
+//l++ and r++ 
+also count -- when we miss the requiremnt constraint increment l adn r
+while(count == t.length()){ // when count==t.length which means it matches exact length
+                if(minlen > right-left+1){
+                    minlen = right-left+1;
+                    res = s.substring(left, right+1);   //s.substring(inclusive, exclusiveindex)
+                }
+                // this is to check if elements which are in t after increment will be >0 which means we are loosing the actual constrint so count--;
+                if(++letterCount[s.charAt(left)] > 0)// reduce the legnth if necessary by increasing the left position
+                    --count; //decrement count becos the lettercount [left after increasiing  and > 0 which means that char is part of t array and we are moving that usig left so decrement the count]
+                left++; // the reason aftr increment , if its not t arrat char, then it wud be from s which was just 0 and never greater than 0
+            }
+
+13:
+
+Input: version1 = "0.1", version2 = "1.1"
+Output: -1
+
+
+  // have two numeric int v1 and v2'
+  //loop. until. both strings are processed
+      --// convert each char in string to single digit and assign to v1 and v2
+      use while becos it may conain more numbers until it hits "."
+       while(i<  version1.length()  && version1.charAt(i) != '.'){
+                numericV1 = numericV1*10 + (version1.charAt(i) -'0') ;
+                
+                i++;
+                
+            }
+        //convert char to  digit using 
+        v1= v1*10 + v.charAt(i)-'0 for both v1 and v2 
+        an d then compare the digits v1 and v2
+        if v1>v2 -->1 
+        if v2>v1 -->-1
+        equal case --***
+             else continue doing the same by i++,j++
+              and also resetsing the earlier difits v1=v2=0;
+           reset v1 and v2
+           and increment further i++ andj++
+
+        after loop retuen 0;
+
+
+
+
+  14: Product of array but itself:
+  Input:  [1,2,3,4]
+Output: [24,12,8,6]
+
+
+   maintain left and right product for the current element  and then multiple
+   left/outproduct[i]  = out/leftproduct[i-1]* nums[i-1]
+initilaize o and N-1 =1 for both aarrays for i ->N-2 i>=0
+   rightprd  = rightprd[i+1]* nums[i+1]
+
+   R=1, out[0]=1
+   left ==> outer[i] = outer[i-1]* nums[i-1]  for i -0;i<N
+   right ==> outer[i] = outer[i] *R   ++> for i =N-1; i>=0
+              R* nums[i]
+
+  
+
+  15: Missing num --***
+   calculate sum and substrct from n(n-1)/2 -sum which give smissing numbers here n-1 becos it starts from 0 to n 
+
+
+
+
+  16: find first  unique character  or first non repiting charcter index in s astring
+
+   use hashmap == becos relate to count in a array or string
+   iterate over the string 
+   HashMap<Character, Integer> hm 
+   hm.put(c, h.getOrDeafult(c,0) +1)
+
+   once we build hashmap
+   then iterate overthe string to check get(c)  ==1 if so return index else -1
+
+   Build hashmap 
+// and traverse the hashmap with value ==1 then return index
+
+
+
+17: Valid Parantheses: ****
+===================
+
+--famous stack reference problem
+--bracket matching probelm 
+-- order of closing important
+
+-- quick check if string length is not even return failes
+loop thru string
+
+if u find the open brace for any brace --push it
+when u find the closing brce , check the top of the stack if it matches then pop it else return false
+opening--push
+closing brace- not emptystack,
+               peek and  if matches then
+               pop
+  at the end  stack needs to be empty 
+  return s.isEmpty()
+
+
+18: Most Common  word problem:
+ ---make the lowercase
+ --split the paragraph and 
+-- use regex(\\W+) for non word characters and + is more 
+use hashset to get quickly instead of for ;loops
+--use hashmap-for each word and maintain count--classic count poroblem
+
+--take the split  words and put it in hashmapbut 
+    --befor eputting check if its a banned word, 
+       -- if so dont put else put in map
+       becos we need other than banned one and it should have max count
+
+--once we build map then classic max problem --maintain max and update max thru loop and if it hit max
+ tehn update result word
+
+
+19: log reorder 
+
+Instead of sorting in the default order, we'll sort in a custom order we specify.
+The rules are:
+Letter-logs come before digit-logs;
+Letter-logs are sorted alphanumerically, by content then identifier;
+Digit-logs remain in the same order.
+
+
+20: Trapping the rain --Hard
+
+Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+
+Diagram is the key to dediuce the logic
+
+// Logic:
+
+// Patter observe here:
+// check the left  max and right  max w.r.t current index, u ll know the left and right max, 
+// then take the minimum out of those and subtract the index[i]
+
+// Build a leftMax array = left[0]= 0 and fil the array 
+// logic to fill the array is 
+
+// if ur at index i, look at the leftMax till i-1 and the current index[i-1] and get the max out of both
+
+// for int=1 
+// leftArray[i] = leftArray[i-1]+ height[i-1];
+
+// Build the same right most array but we can calculate the right most value in ongoing fashion since we have left most array already
+
+// for int j=hieght-2; j>=0;j--
+// right = MAx(h[j+1), right)
+// then x =min(left[j], right) - h[j];
+
+// if x>0
+//  then add that to water = water+x;
+
+
+https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
+
+
+
+
+

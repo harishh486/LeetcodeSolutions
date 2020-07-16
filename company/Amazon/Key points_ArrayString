@@ -1,28 +1,41 @@
 Arrays:
+========
 char arr[] = arr.length
+
 Arrays.fill(pattern, -1);
 Arrays.asList(list);
 int N = matrix.length;
  Arrays.sort(nums);
  
   ==>str to charArray conversion
-   first convert str to charArray
    char [] ch = s.toCharArray();
+
    //iterate
-   for (char c : t.toCharArray() )
+   for (char c : string.toCharArray() )
+
   //convert back to string and make it as key
     String key = String.valueOf(ch);
 
 
-
 //character count--use hash map
-char to digit== v1*10+ v.charAt(i)-'0'
+
+1. char to digit== v1*10+ v.charAt(i)-'0'
+// character to digit ==>  
+int numericV2 = numericV2*10 + (version2.charAt(j) -'0' ); 
+
 boolean islog1Digit = Character.isDigit(s1[1].charAt(0));
 
-// character to digit ==>  int numericV2 = numericV2*10 + (version2.charAt(j) -'0' ); 
-// string to integer == > int i1 =  Integer.parseInt(nums1[i])
+Character comparison:
+=====================
+s.charAt(i) == t.charAt(i)
+
+
+// string to integer == > 
+int i1 =  Integer.parseInt(nums1[i])
+
 
 Strings:
+=============
 
 String s = s ==null or s.length()
 s.charAt(character)
@@ -35,21 +48,22 @@ string.toLowerCase().split("\\W+)
 --regex for non -word character
 --split on non word like space , anything which is not a word
 
-//he compareTo() method compares two strings lexicographically.
-The method returns 0 if the string is equal to the other string. A value less than 0 is returned if the string is less than the other string (less characters) and a value greater than 0 if the string is greater than the other string (more characters).
-Use the equals() method to compare two strings without consideration of Unicode values.
+
 String[1].compareTo(s[1])
+str1.compareTo(str2) ==> method compares two strings lexicographically.
+The method returns 0 if the string is equal to the other string. 
+str< str2 =>A value less than 0 is returned if the string is less than the other string (less characters) 
+          =>  >0  if the string is greater than the other string 
 
+Use the equals() method to compare two strings without consideration of Unicode values.
 
-Character comparison:
-==
-s.charAt(i) == t.charAt(i)
 
 
 Maps:
 ========
 
 HashMap< inetegre, Integer> hm = new HashMap();
+
 hmap.containsKey(target-nums[i])
 hmpa.put(i,j)
 hmap.get(i)
@@ -59,20 +73,18 @@ map.values()--all values in map--list of all values
 
 hm.getOrDefault(c,0) +1
 
-
 map.get(key).add(string)
 
 Map <String, List> map = new HashMap<String, List>();
 
 
-Sets:
+Sets: --unique 
 ========
 Set< character> s = new HashSet();
-Uniques
+
 hashset.contains(s)
 hashset.add(s.charAt(char))
 hash.remove()
-
 hash.size(()
 
 Array list:
@@ -81,6 +93,7 @@ new ArrayList(List of lists) -- gives list of lists
 
 if List<List<String>> is return value
  u can also return new Arraylist() as anchor condition 
+
 
 Sliding window:
 =============
@@ -108,15 +121,12 @@ Stack<Character> st = new Stack()
 
 
 
-
-
 Coding:
 
  // check null cases first
  // Initialization of map,set , list or variables
  //return whatever its asking
  //logic with loops
-
 
 
  optimize:
@@ -126,6 +136,7 @@ Coding:
  unnecessary work
 
 
+ ##
  decrease time by using some auxillary space for repeted work
 
  

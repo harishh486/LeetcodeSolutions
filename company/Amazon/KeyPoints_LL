@@ -1,0 +1,31 @@
+ Linked list Standard:
+
+ Class Node {
+     int val;
+     Node next;
+
+     public Node (int x){
+         this.val =x;
+         this. next = null
+
+     }
+ }
+ 
+ ListNode head = new ListNode(0);
+         ListNode l3 = head;
+
+return head.next;
+
+
+Priority Queue:
+=============
+add option
+ pq uses default minHeap
+ ascending order Comparator
+
+         Comparator<Integer>intComparator = (s1, s2) -> {
+             return s1-s2;
+         };
+pq.add(head.val);
+pq.remove()
+!pq.isEmpty()

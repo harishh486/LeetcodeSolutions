@@ -1,0 +1,168 @@
+1. Add two numbers in LL
+======================
+
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+
+Remeber and dont confuse with reverse or something
+ Thumb rule
+ Numbers are represented in LL in reverse order since we cannot traverse back in LL so it is written in LL
+ SO normall process things but when ur show in LL it is written in reverse order
+ SO regualr logic
+
+ Build a result array and keeping add from l1 and l2.val + carry
+
+
+  check if th node is horter or longer 
+  traverse using while loop
+  while l1!=null || l2!= null -- do this
+  l1.val = l1!=null ? l1.val :0;
+
+  currSum = l1.val+l2.val+carry;
+  Carry = currSum/10;
+  lastdigit = currSum%10;
+ 
+ L3.next = new Node(lastdigit);
+
+
+ // increment all 3 pts but check the value of l1 and l2 before increment
+            if(l1!= null)
+                l1 = l1.next;
+            if(l2!= null)
+                l2 = l2.next;
+            
+            l3 = l3.next;
+
+
+
+2.  Merge two sorted list
+=================================
+
+Compare both list and which ever is less add to final list one by onesimple
+but check the short and longest list checks -- very imp
+
+
+Standard LL declaration and return head.next;
+
+3 cases
+1. 2 lengths same - while
+    while(l1!=null && l2!=null)
+
+After while do checks
+2. l1 is longer
+      if(l1 != null ){
+            l3.next = l1;
+            l3 = l3.next;
+3.   l2 is longer
+if(l2 != null ){
+            l3.next = l2;
+            l3 = l3.next;
+            
+        }
+
+3: Reverse a Linked List:
+=======================
+
+initilize 3 pts
+
+prev curr and next
+prev -null
+curr - head
+
+while curr!= ull
+do 
+
+Save next
+Reverse
+Advance
+
+//take hold of next ptr of curr using next
+//thenn move curr-next to prev pts
+then move both prev and curr
+
+return prev;// becos curr will point to null and prev points to head at that time
+
+4: Rverse Linked List in K groups:
+==================================
+
+1. Create a dummy node and add the entire head list to it
+
+0 1 2  3 4 5 6 7
+2. create a pointer and point  to dummy strating node // we need this to interchnage the pts between groups
+3. there will always be a pointer, which points to the node AHEAD of the first node to reverse. The pointer will help to link the linkedlist after.
+
+
+4. At first, we will add a dummy node in front of the linked list to act as the first pointer. After we add the pointer, the linked list will look like this:
+
+5. if k = 3, we can reverse 1 to 3 first using the following code:
+
+  ListNode prev = null, curr = pointer.next, next = null;
+  for (int i = 0; i < k; i++) {
+		next = curr.next;
+		curr.next = prev;
+		prev = curr;
+		curr = next;
+  }
+  reconstruct the linked list and fix the issue
+  We can fix the sequence based on the following codes. The basic idea is to link the pointer to 3 and link 1 to 4:
+
+	ListNode tail = pointer.next;
+	tail.next = curr; 
+	pointer.next = prev;
+	pointer = tail;
+
+
+    Diagram isth key to this
+
+
+    5. copy linked list with random 
+    =================================
+
+      1. // Creating a new weaved list of original and copied nodes.
+            while (ptr != null) {
+  
+        // Cloned node
+        Node newNode = new Node(ptr.val);
+  
+        // Inserting the cloned node just next to the original node.
+        // If A->B->C is the original linked list,
+        // Linked list after weaving cloned nodes would be A->A'->B->B'->C->C'
+        newNode.next = ptr.next;
+        ptr.next = newNode;
+        ptr = newNode.next;
+      }
+
+      
+      2.  
+      // Now link the random pointers of the new nodes created.
+      // Iterate the newly created list and use the original nodes' random pointers,
+      // to assign references to random pointers for cloned nodes.
+      while (ptr != null) {
+        ptr.next.random = (ptr.random != null) ? ptr.random.next : null;
+        ptr = ptr.next.next;
+      }
+
+      3.     // Unweave the linked list to get back the original linked list and the cloned list.
+      // i.e. A->A'->B->B'->C->C' would be broken to A->B->C and A'->B'->C'
+      Node ptr_old_list = head; // A->B->C
+      Node ptr_new_list = head.next; // A'->B'->C'
+      Node head_old = head.next;
+      while (ptr_old_list != null) {
+        ptr_old_list.next = ptr_old_list.next.next;
+        ptr_new_list.next = (ptr_new_list.next != null) ? ptr_new_list.next.next : null;
+        ptr_old_list = ptr_old_list.next;
+        ptr_new_list = ptr_new_list.next;
+      }
+      return head_old;
+    }
+    
+
+
+
+          
+
+
+
+
+
