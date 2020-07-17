@@ -45,3 +45,5 @@ LinkedList:
 
 list add(t.val)
 list.add(index, t.val);
+
+

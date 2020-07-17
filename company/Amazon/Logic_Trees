@@ -162,3 +162,79 @@ Queue <TreeNode> q = new LinkedList();
     then add the list of level nodes to original node and chnage the flag at each level
       resultList.add(tempList); 
         orderFlag = orderFlag ? false :true;
+
+
+
+    5: word LAdder problem:
+    
+==================
+
+Use bfs and take that word in queue, and take that word and do generate permutation of that word and see if it is present in set, then add to queue
+
+and process it accordingly
+once the pushed node to queu shud be removed from set so that we dont visit multiple times
+if we already found the polled node and check if it matches with end word then return result+1;
+on every iteration  of while increase the result --since it is oprated at level by level
+
+
+    // similar to bfs problem 
+// 1. pop
+// 2. oprate 
+
+//    take th current string and convert to charArray
+//    and try to find all possible versions of words with other al;phabetrs and check if that number is in set and if so , then add
+//    mean while to brealk  if the string we find during q, has met endword then return result+1;
+
+// // 3. push
+//     // pus th found word and also remove that pushed word from set so that it avoids duplicates
+
+//     for some reason standard queu strycture was not working for some test cases for loop===check on this
+
+            
+    // while(!q.isEmpty()){
+            
+    //     //level by level
+    //     for(int i=q.size();i>0;i--){
+    //         //int i =0; i<q.size(); i++
+    //         //int i=q.size();i>0;i--
+    //         // take the string
+
+
+    Conclcusion:
+
+
+// What is being asked
+
+// start to end transformation in a minimum distance possible
+// shortest path from start word to end word
+
+// do we need return to minPath length or possible paths  
+// Since we know that we need a path from one pt to other point and we need apath
+// so we are searching some path--seqrching problem
+
+// --bfs and dfs
+// minimum shorthpath =  since i need a shortest path, how can i use bfs to find a shortest path
+// bfs -- is great when we want to find shortest path length and not the path
+// or if the pathh exists
+
+
+// dfs - is great when we 
+// 1. esier to implement --generic
+// 2. and u r not looking for shortest path but when u want to find the path itself
+
+// great when u recreate the paths
+
+
+// Here bfs
+
+// here use  try with bfs
+
+// create a graph where start is starting node and use the nodes given in dict to use as intermediate hops and reach final word
+
+// once u create a pth then u need to find the length of th path in shortest distance
+
+// How to create that graph??
+
+// func search(sta)rt, end,List<List<String>>
+
+// findadjacent()
