@@ -238,3 +238,25 @@ on every iteration  of while increase the result --since it is oprated at level 
 // func search(sta)rt, end,List<List<String>>
 
 // findadjacent()
+
+
+NumofIslands:
+=============
+
+        // logic is to traverse thru the grid like a regular matrix problm 
+        // if u encounter 1 do:
+        //  incremnet th islands as soon as u encounter the 1
+        //  and visit all neighbours using bfs and turn them into 0/2 so that u dont visit again
+        // visiting all neighbours --seems like a bfs/dfs graph problem so we can use dfs since w e might use recursion to travel the nodes
+        // grid.length--rows count
+        // grid[0].length --no of colummns
+
+
+        mmake a recursive dfs for every node and mark the already visited node using  grid[i][j]='0';
+            
+             grid[i][j]='0';
+        //visiting
+        dfsAdj(grid, i+1, j);//up
+        dfsAdj(grid, i-1, j);// down
+        dfsAdj(grid, i, j+1);// right
+        dfsAdj(grid, i, j-1);// left

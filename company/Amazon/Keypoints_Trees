@@ -46,4 +46,13 @@ LinkedList:
 list add(t.val)
 list.add(index, t.val);
 
+Mmatrix:
+========
+
+char[][] grid)
+        // grid.length--rows count
+        // grid[0].length --no of colummns
+if(i<0 || j<0 || i>grid.length -1 || j > grid[0].length-1 || grid[i][j] =='0')
+return
+
 
