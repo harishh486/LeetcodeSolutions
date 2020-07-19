@@ -56,3 +56,20 @@ if(i<0 || j<0 || i>grid.length -1 || j > grid[0].length-1 || grid[i][j] =='0')
 return
 
 
+// TIP: Always always compare boundary index first then actual condition next otherwise u ll get array out of index exceptions in some cases
+        if(sr <0 || sc < 0 || sr > image.length-1 || sc > image[0].length-1 || image[sr][sc] != initialcolor ) 
+            return; // do nothing just return
+        
+
+
+
+ Recursion:
+ =============
+
+ base case:
+ Recursive eq for call on both left and right
+ Analyze the results from stack calls
+ return 
+
+
+

@@ -260,3 +260,169 @@ NumofIslands:
         dfsAdj(grid, i-1, j);// down
         dfsAdj(grid, i, j+1);// right
         dfsAdj(grid, i, j-1);// left
+
+
+  Course Schedule:
+  =================
+
+Discoverit is a Garph, with nodes and edge in DAG, Acyclic graph
+One node has a dependcy on other 0->1
+So we need to check whether we have a cyclic in it or not becos if deadlock --nosome courses might be left off
+
+1. Build a graph using any datastructure representation of grph:: Adj  lists
+2. Keep a Array to track we have a dependecy and also no depncy courses in an InDegree Array (Incident)
+3.Traverse the graoh using bfs or dfs , we can use bfs--so queue
+   1.pop 2. oprtate 3. push to queus as its neighbours and process them accordingly
+
+
+1.         // Seems like a graph problem based on my instinct
+        // in order to build a graph or represent we need some kind of adj list or some other form to represent
+        // we ll take adj lists here , 
+        
+        // Adj list consists of numofcourses, and the list of courses that depends on this course
+2. 
+       // we ll try to miantian indegree as incidents in nodes
+        //iterate thru prereq and fill the indegree 
+
+3.      // now we have Indegree and Adj list
+        // we ll go thru indegree array and check if there are any courses whose value is zero and well push that elements into queue in the first pass;
+        // we need bfs-- so use Queue
+
+        //pus elemnets initially using Indegree with 0 value init --meaning there are available to complete without any dependcy
+
+
+       // now we ll sue traditional bfs::queue logic 
+        // until q is empty, pop() ==>. operation ==> push
+
+
+        while q-not emepty do:
+        // we ll take this course and check in adjacency list if we have any neighbours
+            // we llmaintain a counter, whenever we pop an element which means we completed the course
+            //so we are. reaching near our target and atlast we compare our target and counter to see if we are able to complete all courses
+            
+            counter++;  // incr as soon as we pop elements
+
+
+              // we ll take the neigbours if we have and reduce the neighbours,
+                //since we completed the current course by removing from queue, that courses which depends on this course needs to be reduced and also check if they are 0 then they need to push,
+                InDegree[neighbours]--;
+                if(InDegree[neighbours] == 0)
+                    // u need to push this into the queue
+                    q.add(neighbours);
+
+
+LOwest Common Ancestor:
+==================
+ //Diagram
+
+ Recursiion:
+
+ base case:
+ Recursive eq for call on both left and right
+ Analyze the results from stack calls
+ return 
+
+ 1. if root == null return null
+    if root is equal to one of the values
+     return root
+    if(root.val == p.val || root.val ==  q.val)
+            return root;
+  2.  //recursively search both nodes
+        TreeNode lst = lowestCommonAncestor(root.left, p,q);
+        TreeNode rst = lowestCommonAncestor(root.right, p,q);
+  3. Handle results
+     a) if nothing returns from left then result 
+     b) if nothing returns from right then result left
+     c) if noth of them returns soemthing then that is the lowestCommonAncestor
+         return root
+     d) if both of them returns null, u will return null and its been handled by above case
+     
+
+       if(lst == null) return rst;
+        if(rst == null) return lst;// if one of thrm id null then return th othr node
+        //if both of them are not null then we return root because that is lca
+        return root;
+
+
+
+  Diameter of Binary tree:
+  =======================
+
+  2 cases to handle 
+  1. With node -- dimater can have --longest length passing thru root
+  2. without root node -- longets length without passin thru node/root
+
+  1. case
+  for root node we  calculate the height of both nodes and add both heoights incliuding roots
+   leftheight+ righthight+1;
+  2. Without node:
+
+  There might be diamtere at one left tree and shortest length at other tree withouyt including root
+  in that case
+  Math.max(leftdiamter, rightdiamter)
+
+
+  So for every node we do not know whether it has large dimater with or without node 
+  so we calculate both for every nodeand take the maximum out of it
+
+  res = Math.max(leftheight+ righthight+1;, Math.max(leftdiamter, rightdiamter))
+
+  // T: o(n) --since we optimized the solution to clauclate the height and dimater of a node at the same tme
+// // this was calculating multiple time ...soo for every node it was calculating height and for 
+// each node to calculate diamter , it also calculates height again even though it calculated already 
+// //repetitive
+// --optimized to calculate both at one go
+// //recursive calls for every node but have constant time
+
+
+  if(root == null){
+         return new HD(0,0);  
+       }
+   
+       HD lhd = heightDiameter( root.left);
+       HD rhd = heightDiameter( root.right);
+       
+       // All this constant time
+       int height = 1+ Math.max(lhd.h, rhd.h);
+       int diameter = Math.max( lhd.h+ rhd.h, Math.max(lhd.d, rhd.d));
+                                // with node.    without node
+       // here with node calculate the height of left and right and max of it and adds 1 so we need not add one again
+       //**** imp 
+
+       return new HD(height, diameter);
+
+
+  Flood fill
+  ================
+
+   // Visulaize like a graph so that u ll get some intuition
+        // it is like from a given node reach out the nodes which has same color and chnage to new color
+        // traverse from one node to all nodes in graph usig bfs/dfs and chnage  the image
+        // since it is matrix we will use dfs to recursive calls to traverse up, down ,left and right
+        //easy technique
+
+
+      // Base cases: if src == new color then do nothing and return image
+        if(image[sr][sc] == newColor)
+            return image;
+
+      / check the boundaries for the edge cases for indices
+        //check also if the color that we are processing is not what we wanted::so dont touch them
+        
+        // TIP: Always always compare boundary index first then actual condition next otherwise u ll get array out of index exceptions in some cases
+        if(sr <0 || sc < 0 || sr > image.length-1 || sc > image[0].length-1 || image[sr][sc] != initialcolor ) 
+            return; // do nothing just return
+        
+        // chnage the color
+        and call dfs( All way)
+
+        image[sr][sc] = newColor;
+        fill (image, sr+1,sc, initialcolor, newColor);
+         fill (image, sr-1,sc, initialcolor, newColor);
+         fill (image, sr,sc+1, initialcolor, newColor);
+         fill (image, sr,sc-1, initialcolor, newColor);
+        
+
+
+
+  

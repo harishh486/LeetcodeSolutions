@@ -17,6 +17,9 @@ class Solution {
         for(int i=0; i <grid.length;i++){
             for(int j=0;j<grid[0].length;j++){
                 if(grid[i][j] == '1'){
+
+                    //Count the number of nodes that trigger DFS, 
+                    //this number would be the number of islands since each DFS starting at some node identifies an island.
                     numislands++;
                     dfsAdj(grid, i, j);
                 }
