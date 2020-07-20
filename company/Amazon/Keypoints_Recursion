@@ -1,0 +1,45 @@
+Recursion:
+=======
+
+Standard Template
+==============
+
+
+List<String> result = new ArrayList();  -- initilze result
+
+if(digits == null || digits.length() == 0)  -- base condition to return result
+    return result;
+        
+letterCombinationsRecursive(mapping, result, digits, "", 0); -- helper recursive fun
+return result;  --return result
+
+
+helper(){
+    1.base condition
+    2. recursive call
+    3. operation on  results if any--constant time --can be
+
+}
+
+Recursion--timecomplexity is very difficult to access
+
+If you have a tree with branching of b and max depth of m,
+ the total number of nodes in this tree in worst case: 1 + b + b^2 + ... + b^(m-1), 
+ which is a sum of geometric sequence: (b^m-1)/(b-1).
+  So you can say that time complexity is O(b^m). 
+  For the example above it is O(4^n) = O(2^(2n))
+
+
+
+
+
+  Back tracking:--
+  ===============
+All aboiut decisons
+        
+  Backtrack--dfs--recursive
+  1: our choic-- ( or)--insert
+  2. our constraint: 
+     only insert back) if we already  have open and
+     also  we can isert open upto n-limit
+  3. our goal--gerete all possibilities of length n*2

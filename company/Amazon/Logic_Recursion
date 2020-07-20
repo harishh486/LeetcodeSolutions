@@ -1,0 +1,71 @@
+1. letterCombination of phone numbers:
+===================
+// combination -- tells permutation
+// heavy recursion
+//helper function standard template
+
+Within recursive:
+ // base case
+ // "23" --> index 0 and index 1, 
+ // when we reach the index , we already had a combination of two letters so we can directly add them
+        
+  if(index == digits.length()){
+            result.add(combination);
+            return ;
+        }
+
+    // Parse the string "23" to actual digits and then get actual letters of that digits 2 and 3;
+    // iterate upto digit length
+    // traverse heavy recursive method till how many numbers
+    // get the actual letter and iterate ovetr th lengthy of that letter
+        
+    // here lets say we got "abc"
+    // then we add the first letter of letters into existing combination and increase the index to go to next pressed number.
+    // take 'a' - call other numbers "3"--return def
+    // now recursive call again
+
+       char[] pressedNumbers = digits.toCharArray();
+      
+        String letters  = mapping[pressedNumbers[index]- '0'];
+        //a- ad-ae-af, b-bd-bf-be;;;etc
+        for(int i =0; i< letters.length();i++){
+            letterCombinationsRecursive(mapping, result, digits, combination + letters.charAt(i) ,index+1 );   
+        }
+
+
+2: Generate Parenthesis:
+=======================
+
+Brute for ce --2^n psossibilities and select the valid oones
+
+Backtrack--dfs
+  1: our choic-- ( or)--insert
+  2. our constraint: 
+     only insert back) if we already  have open and
+     also  we can isert open upto n-limit
+  3. our goal--gerete all possibilities of length n*2
+
+tree diagram--helps
+
+Standard template:
+
+
+recursive: dfs
+
+   // base case:: current string shud be of full length then stop becos we need full length things
+        if(combination.length() == max*2){
+            result.add(combination);
+            return;
+        }
+  // recursive call and operations if any
+        // we ll try to increase "(" whenever possible like  no of open ( is still less than max n=3, we ll recurse
+        if(open < max)
+            helperRecursive(result, max, combination+ "(", open+1,close);
+        if(close< open)
+            helperRecursive(result, max, combination+ ")", open,close+1);
+        
+    }
+
+ 
+
+        
