@@ -66,6 +66,82 @@ recursive: dfs
         
     }
 
+
+    3: Word search:
+====================
+traditionalp back track template 
+with matriz
+
+Recursion plus Matrrix --dfs templte:
+
+  for(int i =0; i<board.length;i++ ){
+            for(int j=0;j<board[0].length; j++){
+                if(board[i][j] == word.charAt(0) && dfs(board, word, 0,i, j))
+                    return true;
+            }
+        }
+
+// dfs part:
+1. base case :: count  the characters
+2/ boundaries --return false
+3. take the original char
+   do dfs
+   retain old 
+   backtracking technique
+
+
+ dfs(char[][] board, String word, int count, int i, int j){
+        // base condition
+        //we will increent count for every recursive call
+        if(count == word.length()){
+            return true;
+        }
+        
+        if(i<0 || j<0 ||i >= board.length || j >= board[0].length || board[i][j] != word.charAt(count))
+            return false;
+        
+        char temp=board[i][j]; //restore original 
+        //chnage to something becos of avoiding visiting again 
+        board[i][j] = ' ';
+        boolean found = dfs(board, word, count+1,i+1, j) || dfs(board, word, count+1,i-1, j) || dfs(board, word, count+1,i, j+1) || dfs(board, word, count+1,i, j-1) ;
+        board[i][j] = temp;
+        return found;
+        
+    }
+
+
+word search:2
+===============
+
+// iterate over the ,matriz 
+// each letter and check with trie whether that letter is present in the trie or not
+// if so then control comes to second char in that node trie , now matrrix do dfs and search
+//  if any sorrounding  element is  a char  item that is present in the  next node of the trie
+//  if so repeat
+
+
+// Back Track technique:
+
+// Make chnage
+// reucrsive
+
+// and undo the chnages
+
+
+    // word search problem
+        // Seeing this would definitely bfs/dfs
+        // matrix pattern
+        
+        //Many words:: take each word and try. to search in the matriz juts like word search
+        //But the time complexity would be very high
+        
+        // We can leverage Trie data structure
+           // -- prune. the back tracking.
+           //     we ll try to. iterate whole matrix and if that board[i][j] char is  
+           //         found in Trienode '0' which is a children for root, then we ll keep searching
+           //             if we have whole word in matrrix 
+           //                 --back tracking with trie --pruning
+
  
 
         

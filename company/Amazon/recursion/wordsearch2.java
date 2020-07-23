@@ -119,9 +119,10 @@ class Solution {
 
 // and undo the chnages
 
+Main logic:
 
-iterate over the ,matriz 
-each letter and check with trie whether that letter is present in the trie or not
-if so then control comes to second char in that node trie , now matrrix do dfs and search
- if any sorrounding  element is  a char  item that is present in the  next node of the trie
- if so repeat
+// iterate over the ,matriz 
+// each letter and check with trie whether that letter is present in the trie or not
+// if so then control comes to second char in that node trie , now matrrix do dfs and search
+//  if any sorrounding  element is  a char  item that is present in the  next node of the trie
+//  if so repeat
