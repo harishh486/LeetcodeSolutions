@@ -79,6 +79,37 @@ throw new IllegalArgumentException("No two sum solution");
 
 
 
+
+sorted two sum:
+======
+
+// here we use imp techniq
+// use two pointer if we have sorted 
+// iterate over both pts and check if sum is ><= target , depnds on that adjust ptr indeex
+  int a_ptr = 0;
+        int b_ptr = nums.length-1;
+        
+        //[2, 7, 11, 15] --ask if sorted
+        
+        while(a_ptr <= b_ptr){
+            int sum = nums[a_ptr] + nums[b_ptr];
+            
+            if(sum > target){
+                b_ptr -=1;
+                
+                
+            }else if(sum < target) {
+                a_ptr += 1;
+            }
+            else {
+                return new int[]{a_ptr +1, b_ptr+1};
+            }
+        }
+        
+        return new int[]{a_ptr +1, b_ptr+1};
+
+
+
 4. container probelem --max area
 ===============================
 Input: [1,8,6,2,5,4,8,3,7]
