@@ -1,0 +1,6 @@
+
+list to Arrays
+output_list.toArray(new int[output_list.size()][])
+
+sort the array of arrays , interval[][]
+Arrays.sort(intervals, (arr1, arr2) -> Integer.compare(arr1[0],arr2[0]));

@@ -1,0 +1,22 @@
+Mergeintervals:
+=============
+
+
+/ now we need to soet the intervals becos it did not gave them it is sorted
+        // need a custom object comparator to sort based on first element of array
+        //[[1,3],[2,6],[8,10],[15,18]]
+
+        / create a list of arrays since u dont know the arr elements which might have merged so list is good option
+
+        // we ll add th initial value and then update the secon element of array after adding
+         //now weh ahve first element in list
+        // [[1,3]]
+        // logic is compare the second element of first array with first element of second array
+        // [[1,3],[2,6]]
+
+conversion from list of arrays to arr if arrays matriz
+
+        ***--> output_list.toArray(new int[output_list.size()][])
+        Arrays.sort(intervals, (arr1, arr2) -> Integer.compare(arr1[0],arr2[0]));
+
+        use compare (a,b) not a-b
