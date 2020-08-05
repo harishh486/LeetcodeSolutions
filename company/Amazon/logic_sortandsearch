@@ -90,7 +90,16 @@ top k freqeunt lements:
 
 
 
-        heap
-        cretae -o(k)
-        replace -logk
-        printall -- o(k )
+       )
+
+k closest nearest points  from origin:--amazon
+=========
+
+// then we ll insert all the elements 
+//  provided we only keep only k elements , so we pop all elements  from max heap , now we have only k elements and which are nearest to origin
+//   now we iterate
+//(O(n) + (n-K)log(K)) 
+
+// //Time Complexity: O(n) + (n-K)log(K)
+        //O(n) for builing the heap
+        //and for every (n-K) element we go heapification which takes log(K) time

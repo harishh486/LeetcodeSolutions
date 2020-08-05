@@ -11,7 +11,9 @@ class Solution {
         //max heap shud be based on distance square root from origin ,
         //klogk
         for(int[] arr : points ){
+            //we ll add all
             maxHeap.offer(arr);
+            // but we gonna keep only k elements so that at the end we ll have  k nearest points in the  heap
             if(maxHeap.size() > K)
             maxHeap.poll();
         }
@@ -28,6 +30,11 @@ class Solution {
 }
 
 
+Algo:
+// we ll constructr a max heap
+// then we ll insert all the elements 
+//  provided we only keep only k elements , so we pop all elements  from max heap , now we have only k elements and which are nearest to origin
+//   now we iterate
 //(O(n) + (n-K)log(K)) 
 
 // //Time Complexity: O(n) + (n-K)log(K)
