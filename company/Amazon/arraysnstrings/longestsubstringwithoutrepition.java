@@ -1,7 +1,7 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         
-       if(s.length() == 0. || s == null)
+       if(s.length() == 0 || s == null)
            return 0;
         int l=0;
         int r=0;
@@ -28,6 +28,9 @@ class Solution {
     }
 }
 
+// Input: "abcabcbb"
+// Output: 3 
+// Explanation: The answer is "abc", with the length of 3.
 
 //sliding window
 fix one rotate other , 

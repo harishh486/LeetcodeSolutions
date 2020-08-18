@@ -64,3 +64,7 @@ class Solution {
 // but in dp both are o(n^2)
 
 // Use Expand from middle approach instead of dp
+
+// Input: "babad"
+// Output: "bab"
+// Note: "aba" is also a valid answer.

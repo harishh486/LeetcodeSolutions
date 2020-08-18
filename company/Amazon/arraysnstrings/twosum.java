@@ -18,6 +18,11 @@ class Solution {
 }
 
 
+// Given nums = [2, 7, 11, 15], target = 9,
+// Because nums[0] + nums[1] = 2 + 7 = 9,
+// return [0, 1].
+
+
 // T: 0(n) -- traverse list atleast once, and search time in hash would be 0(1) ==> 0(n)
 //  S: 0(n)--atmost n elements we store
 // brute force: search for all pairs and make them equal tp target

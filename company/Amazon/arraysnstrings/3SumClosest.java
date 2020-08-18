@@ -31,6 +31,12 @@ class Solution {
 }
 
 
+
+// Input: nums = [-1,2,1,-4], target = 1
+// Output: 2
+// Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+
+
 //t: O(n*n) 2 loops iterate  + sort (nlogn) ==> o(n*n) + nlogn
 //S: o(n)-o(logn) // depends on implementation of sorting algorithm
 //depends on the sorting algorithm

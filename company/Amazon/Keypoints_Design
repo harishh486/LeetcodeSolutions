@@ -1,0 +1,22 @@
+LRU
+
+   class Node{
+        int key;
+        int val;
+        Node prev;
+        Node next;
+    }
+
+       public LRUCache(int capacity) {
+        // init
+        // init the map with capacity so taht we only store those much
+        
+        node_map = new HashMap(capacity);
+        this.capacity = capacity;
+        //head--tail
+        head.next = tail;
+        tail.prev = head;
+        
+    }
+node_map.size() == capacity
+

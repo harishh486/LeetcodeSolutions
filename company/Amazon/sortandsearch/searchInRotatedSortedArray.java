@@ -10,8 +10,7 @@ class Solution {
         
         //regular binary search loop
         while(left <= right){
-            int mid = left + (right-left)/2;
-            
+            int mid = left + (right-left)/2;        
             if(nums[mid] == target)
                 return mid;
             // if thhis loop is sorted or othher loop needs to sort somehow

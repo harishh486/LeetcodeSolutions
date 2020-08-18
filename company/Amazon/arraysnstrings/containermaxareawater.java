@@ -19,8 +19,6 @@ class Solution {
                 right--;
             
         }
-        
-    
         return max;
         
         
@@ -28,6 +26,9 @@ class Solution {
 }
 
 
+// Input: [1,8,6,2,5,4,8,3,7]
+// Output: 49
 
-T: 0(n)
-s: 0(1)
+
+// T: 0(n)
+// s: 0(1)

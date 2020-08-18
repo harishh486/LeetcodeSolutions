@@ -156,7 +156,7 @@ return thous[num/1000] + hund[(num%1000)/100] +tens [num%100/10] + num%10
 
 6. Roman to Int 
 
-Input: "III"
+Input: "III"f
 Output: 3
 
   Keep a hashmap of roman and original
@@ -503,7 +503,23 @@ use hashset to get quickly instead of for ;loops
  tehn update result word
 
 
+ Input: 
+paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+banned = ["hit"]
+Output: "ball"
+Explanation: 
+"hit" occurs 3 times, but it is a banned word.
+"ball" occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. 
+Note that words in the paragraph are not case sensitive,
+that punctuation is ignored (even if adjacent to words, such as "ball,"), 
+and that "hit" isn't the answer even though it occurs more because it is banned.
+
+
 19: log reorder 
+
+Input: logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+Output: ["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]
+
 
 Instead of sorting in the default order, we'll sort in a custom order we specify.
 The rules are:

@@ -62,6 +62,9 @@ class Solution {
 }
 
 
+// Input: "42"
+// Output: 42
+
 
 // null check
 //trim case using trim()

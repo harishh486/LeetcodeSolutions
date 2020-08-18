@@ -1,0 +1,13 @@
+3sumclosest
+==========
+l = i+1;
+h = length-1;
+
+target = nums[i]
+
+
+maxarea container
+===============
+
+int left = 0; //first ptr
+int right = height.length -1;  //last ptr

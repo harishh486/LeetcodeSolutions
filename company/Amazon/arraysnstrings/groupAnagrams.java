@@ -30,6 +30,16 @@ class Solution {
 }
 
 
+
+// Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+// Output:
+// [
+//   ["ate","eat","tea"],
+//   ["nat","tan"],
+//   ["bat"]
+// ]
+
+
 //T: 0(nklogk) klogk is for array
 //S:0(nk)
 //n -lenth og string arrays and to sort each st we take klogk

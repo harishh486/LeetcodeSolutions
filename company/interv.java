@@ -354,12 +354,13 @@ public class Test {
 or 
 
 
+
 for(int i=0;i< deck.size();i++){
 
     int index = (int)Math.random *(deck.size())
     int temp = d[i]
     d[i] = d[index]
-    d[iindex] =temp
+    d[index] =temp
 }
 
 
@@ -435,7 +436,7 @@ cert created by CA authority,since browsers have thos public key they can verify
 
 
 SSl and TLS:
-secure t\http protects the data using one of the protoocols called sssl and TLS--ensure security on internet
+secure t\http protects the data using one of the protoocols called ssl and TLS--ensure security on internet
 http over tls, ssl, and secure
 if your website is using HTTPS, all the information will be encrypted by SSL/TLS certificates.
 
@@ -490,8 +491,6 @@ DNS, DHCP
 
 No handshake
 
-
-
 TCP:
 Transmission Control Protocol
 a connection-oriented protocol.
@@ -536,7 +535,8 @@ Insertion Sort--
       will use insertion sort if they break down the data set into smaller data sets using recursion. 
      They utilize Insertion Sort once the data set has been broken down to be a relatively small data set
 
-     Note: Best to use when the list is small and/or almost totally sorted. It takes a long time but it does have some pluses in stability and space. Be sure to mention this as an alternative to the above two sorts if the situation calls for stability/space
+     Note: Best to use when the list is small and/or almost totally sorted. It takes a long time but it does have some pluses 
+     in stability and space. Be sure to mention this as an alternative to the above two sorts if the situation calls for stability/space
 
 
      Worst case performance: O(n²) — So if you have 100 elements in your array, at worst, this algorithm will do 10,000 comparisons. 
@@ -571,9 +571,12 @@ Merge sort
 
     Best times to use this algorithm:
     1.Larger data sets
-    2.When there are not memory or storage constraints, as the most common implementations of merge sort uses a secondary list using the same amount of space as original list to help with sorting.
+    2.When there are not memory or storage constraints, as the most common implementations of merge sort uses a
+     secondary list using the same amount of space as original list to help with sorting.
     3.When items in the data set can be accessed sequentially
-    Note: If two arrays are already sorted, it is especially easy to merge them. This algorithm takes apart an unsorted array to take advantage of this fact. Also worth mentioning is that the space complexity of merge sort is good at O(n), so if you come across an interviewer who asks you to prioritize space, this would be a good sort to pick
+    Note: If two arrays are already sorted, it is especially easy to merge them. This algorithm takes apart an
+     unsorted array to take advantage of this fact. Also worth mentioning is that the space complexity of merge sort is good at O(n), 
+     so if you come across an interviewer who asks you to prioritize space, this would be a good sort to pick
 
     Worst case performance: O(nlogn) — The worst case is the same as both worst case, and best case.
 Average case performance: O(nlogn) — The average case is the same as both worst case, and best case.
@@ -581,8 +584,11 @@ Best case performance: O(nlogn) — The best case performance is the same as bot
 
 Quick Sort
         Large data sets
-        When the ordering of equal elements is not important. Quicksort is not a stable algorithm, which means that once the data set is ordered, that elements whose values are equal, are not guaranteed to be in the same ordering as the initial data set.
-        Note: There are plenty of edge cases where it is less successful, but it is usually considered the all around best if you had to guess what to use. You can avoid most worst case scenarios by choosing the pivot wisely (the closest to the median possible). You can also mention 3-way quick sort/Dutch National Flag as an alternative to quick sort for repetitive inputs.
+        When the ordering of equal elements is not important. Quicksort is not a stable algorithm, which means that once the data set is ordered,
+         that elements whose values are equal, are not guaranteed to be in the same ordering as the initial data set.
+        Note: There are plenty of edge cases where it is less successful, but it is usually considered the all around best if
+         you had to guess what to use. You can avoid most worst case scenarios by choosing the pivot wisely 
+         (the closest to the median possible). You can also mention 3-way quick sort/Dutch National Flag as an alternative to quick sort for repetitive inputs.
         Fun Fact: Ruby uses quick sort for its .sort method.
         Running time complexity:
     Worst case performance: O(n²) — For Quicksort, n² running time complexity is rare. So this should not be very worrisome.
