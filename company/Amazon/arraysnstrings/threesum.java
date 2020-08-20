@@ -47,6 +47,16 @@ class Solution {
     }
 }
 
+
+// Given array nums = [-1, 0, 1, 2, -1, -4],
+
+// -4 -1 -1 0 1 2
+// A solution set is:
+// [
+//   [-1, 0, 1],
+//   [-1, -1, 2]
+// ]
+
 // sort the problem
   //a+b = -c;
   //check duplicates if processed previous one then skip next one 

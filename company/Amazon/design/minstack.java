@@ -36,9 +36,16 @@ class MinStack {
 }
 
 
-T: 0(1)
-S: 0(n)
-extra space 
+// T: 0(1)
+// S: 0(n)
+// extra space 
+
+// Input
+// ["MinStack","push","push","push","getMin","pop","top","getMin"]
+// [[],[-2],[0],[-3],[],[],[],[]]
+
+// Output
+// [null,null,null,null,-3,null,0,-2]
 
 /**
  * Your MinStack object will be instantiated and called as such:

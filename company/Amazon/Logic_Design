@@ -106,4 +106,31 @@ Pop()
    --pop()
       if element is min that we are poping  u geerally pop and also update the next min using next pop
       --- 2 opo operations
-      
+
+
+Medianfinder from data stream:
+============================
+
+Use priority queue both max and min heap
+
+ Heaps are a natural ingredient for this dish! 
+ Adding elements to them take logarithmic order of time. They also give direct access to the maximal/minimal elements in a group.
+
+// A max-heap to store the smaller half of the input numbers
+// A min-heap to store the larger half of the input numbers
+The max-heap contains all the smaller numbers while the min-heap contains all the larger numbers
+
+// All the numbers in the max-heap are smaller or equal to the top element of the max-heap (let's call it xx)
+// All the numbers in the min-heap are larger or equal to the top element of the min-heap (let's call it yy)
+// Then xx and/or yy are smaller than (or equal to) almost half of the elements and larger than (or equal to) the other half. That is the definition of median elements.
+
+
+add :
+  add to min 
+  add to max by removing min
+  if size of min < maxheap
+    remove from max and addd to min
+
+median:
+   if min and max size equal then peeks of both/2
+   else min .peek
