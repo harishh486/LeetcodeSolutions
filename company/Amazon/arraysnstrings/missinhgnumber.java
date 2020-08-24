@@ -26,7 +26,7 @@ class Solution {
 
         }
         //upto n and including n so <=
-        for (int i=0;i< = nums.length;i++){
+        for (int i=0;i<= nums.length;i++){
             if(!hs.contains(i)){
                 return i;
             }
