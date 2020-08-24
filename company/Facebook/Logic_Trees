@@ -65,3 +65,58 @@ Binary Path:
          if(node.right != null)
            dfs(node.right, currentPath + "->"); //
     }
+
+
+alien dictionary:
+==================
+
+Same p[roblem as course schedule--dependecy thinng]
+1. Build a graph from all words initially
+2. use topological dfs()
+
+1. Buildgraph
+----    // build a dependency graph using adjlist and also update the indegree array
+     // // initialise the adj list graph with all charac ters in all words
+     / once u fill with init,  then u eatblish relationships
+     loop thru all words
+     // now compare each char in thos words
+     // a->b here out=a, in=b
+       char out = first.charAt(j);
+                    char in = second.charAt(j);
+                    // a->b , so in adj list. we need to insert the valiue if not present
+                    // if the graph does not contains dependecny, which is in set, u add it else u dont add// since hashset, we can check usinhg contains i guess
+                    //also increase the indegree if u find the dependency
+                     // once it is found , u can break out th e loop
+2. toplogicaldfs()
+            // we ll use stringbuilder to update the characters instead of string
+        // we ll insert all elements into queue who has indegree==0 initially, which means they dont have any dependency so they can come at any time//
+        // so insert all indgree==0 into queu and do a stanmdard queue template
+        / loop thru all keys in graph and check the indegree of that character in indegree if its has zero , if so then  add to queue initially
+        // initial push to queue
+         so u need to add all orphan nodes to sb , since it contains results
+
+         // now we need to find nodes which has dependency, take it out and reduce the indegree and check if indegreeis zero then add tio queue
+        
+        // stand ard queue template
+
+        if(adjList.get(curr) == null || adjList.get(curr).size()==0 ){
+                // we shud not do antthing, and pick the next nodes in the queue
+                continue;
+            }
+           // if we have some elements in the adj list which means we have a dependency
+            // So what do we do here:??
+            // i think we can take it and reduce the indgree ??
+           //   Since we are. removing this particular current element, so we need to reduce all its neighbour indegree becios we removed aos we need to update the indegree of all its neiughbours
+
+              //also check if it becomes zero after update we need to push to queu and sb
+                if(indegree[neighbour-'a'] == 0){
+                    //add to q and sb
+                    q.offer(neighbour);
+                    sb.append(neighbour);
+                    
+                }
+
+
+        // once we are out of queue, which means we processed all nodes
+        // if total chars is sb length, which means we got all chars /nodes so we can return else ""
+        return sb.length() == totalChars ? sb.toString() : "";

@@ -39,7 +39,7 @@ class Solution {
                     // if the graph does not contains dependecny, which is in set, u add it else u dont add// since hashset, we can check usinhg contains i guess
                     if(! adjList.get(out).contains(in)){
                         adjList.get(out).add(in);
-                        //also increase the indegree if u find the dependency
+                        
                         indegree[in -'a']++;
                     }
                     // once it is found , u can break out th e loop
