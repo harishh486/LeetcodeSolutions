@@ -120,3 +120,44 @@ Same p[roblem as course schedule--dependecy thinng]
         // once we are out of queue, which means we processed all nodes
         // if total chars is sb length, which means we got all chars /nodes so we can return else ""
         return sb.length() == totalChars ? sb.toString() : "";
+
+
+BST To Sorted DLL
+================
+
+Summary:
+
+Perform Inorder with chnage in process step:
+
+Everythhing inplace-- space for recursive calls
+1.u need to have a Prev node and also some head reference as well 
+becos prev keeps on chnaging
+
+prev  = new Node(0, null, null);
+ Node head = prev;
+                                             P  Root
+2. call convert  // draw a diagram of dll 1->2-3
+   -- inorder
+      main step
+
+      if(root == null)
+      return; // base for recursion
+       //Inorder style
+       //1. left
+       convert(root.left);
+       //2. Process
+         prev.right = root;
+         root.left= prev;
+         prev = root;
+       //3. right
+       convert(root.right);
+3. once converted 
+   rearrange last and first pointers,
+
+   At this point ,prev points to last node 
+   head is a dummy node so 
+   and we ll return head.right
+   
+   prev.right = head.right;
+   head.right.left = prev;
+   return head.right;
