@@ -161,3 +161,25 @@ prev  = new Node(0, null, null);
    prev.right = head.right;
    head.right.left = prev;
    return head.right;
+
+Bipartite:
+==========
+
+
+Summary:
+        
+//  for all vertices: 
+      if its not colored:
+         do bfs
+         create q, add init vertex, and also color initaly vertx to 0;
+         while(q is notEmpty){
+             1. pop the vertex
+             2. get their neighbours of popped one: using int neigh: graph[poppedVertex]
+             3. for all neighbors
+                 check if its not colored
+                    then add to q and color it color[neigh] = color[poppedVertex] ^ 1;
+                 check if its neighbour is colored, and also matches the poppedVertex, then return false;
+             
+             After qhile loop success, we have traverses and everything is true and return true;
+             
+         }
