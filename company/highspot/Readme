@@ -113,7 +113,12 @@ Note:
  This app is built using Flask and sqlite framworks and deployed using docker container.
  Docker container is exposed at port 8083 to serve the requests:
 
- 
+Database Table:
+   -highspot_app (Table name)
+       This table stores endpoint_id, post_data and post_timestamp from the post payload request.
+
+
+
 
 
 
